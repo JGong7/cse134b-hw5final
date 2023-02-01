@@ -30,7 +30,7 @@
         
         <picture>
             <source media="(min-width: 1000px)" srcset="image.png">
-            <img src="IMG_2152.jpg" width = "500" height = "600">
+            <img src="IMG_2152.jpg" alt="me" width = "500" height = "600">
         </picture>
         
         <iframe src="index.html"></iframe>
@@ -48,6 +48,7 @@
         <br>
 
         <section>
+            <h1>Demonstration of canvas</h1>
             <canvas id="Canvas" width="250" height="200">Your browser does not support canvas</canvas>
             <script>
                 var can = document.getElementById("Canvas");
@@ -78,7 +79,7 @@
         <br>
 
         <label for="number">Choose your favorite number:</label>
-        <select name="number" id="numbers">
+        <select name="number" id="number">
             <optgroup label="Whole numbers">
              <option value="1">1</option>
              <option value="0">0</option>
@@ -112,8 +113,8 @@
         <table>
             <caption>Class difficulty ratings</caption>
             <colgroup>
-                <col span="2" width="300">
-                <col width= "500">
+                <col span="2">
+                <col>
             </colgroup>
             <tr>
               <th>Class 1</th>
