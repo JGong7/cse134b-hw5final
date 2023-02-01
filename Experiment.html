@@ -7,27 +7,46 @@
         <template><p>Just like John Cena, I can't be seen.</p></template>
         <strong>This text is so important and strong!</strong>
         <i>This sentence is set off from the normal tone</i>
+        
         <code>
             x = 1;
             y = 2;
             z = x + y;
         </code>
+        
         <pre>
             This paragraph's 
             horrible structure is getting
             preserved
         </pre>
+        
         <picture>
             <source media="(min-width: 1000px)" srcset="image.png">
             <img src="IMG_2152.jpg" width = "500" height = "600">
         </picture>
+        
         <iframe src="index.html"></iframe>
+        
         <br>
+        
         <audio controls>
             <source src="bing-chilling.mp3" type="audio/mp3">
         </audio>
+        
         <video width="320" height="240" controls>
             <source src="rickroll.mp4" type="video/mp4">
         </video>
+
+        <section>
+            <canvas id="Canvas" width="250" height="200">Your browser does not support canvas</canvas>
+            <script>
+                var can = document.getElementById("Canvas");
+                var context = can.getContext("2d");
+                context.fillStyle = "#004555";
+                context.fillRect(0, 0, 150, 50);
+            </script>
+        </section>
+        
+
     </body>
 </html>
