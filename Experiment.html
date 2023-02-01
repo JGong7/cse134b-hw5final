@@ -82,9 +82,24 @@
             </optgroup>
         </select>
 
+        <br>
+
         <textarea>
             This is a multi-line plain-text editing control. 
         </textarea>
+
+        <form>
+            <label for="state">Which state are you currently at?</label>
+            <input list="states" name="state" id="state">
+            <datalist id="states">
+              <option value="NY">
+              <option value="CA">
+              <option value="PA">
+              <option value="MA">
+              <option value="FL">
+            </datalist>
+            <input type="submit">
+        </form>
 
     </body>
 </html>
