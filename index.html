@@ -5,6 +5,7 @@
         <meta name="author" content="Jerry Gong">
         <title>Jerry Gong's first attempts at web dev</title>
         <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://kit.fontawesome.com/077425810e.css" crossorigin="anonymous">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
             body{
@@ -13,54 +14,66 @@
                 color: lightslategray;
                 display: grid;
                 grid-template-rows: repeat(9, 100px);
-                grid-template-columns: repeat(10, 200px);
+                grid-template-columns: repeat(11, 200px);
                 
             }
             header{
-                font-size: 1.5rem;
+                font-size: 1rem;
                 grid-row-start: 1;
                 grid-row-end: 2;
                 grid-column-start: 2;
                 grid-column-end: 4;
                 align-self: center;
-                font-family: cursive !important;
             }
+
+
+
             nav{
                 display: flex;
                 flex-direction: row;
-                gap: 20px;
+                gap: 40px;
                 font-size: 1rem;
                 grid-row-start: 1;
                 grid-row-end: 2;
                 grid-column-start: 7;
-                grid-column-end: 10;
+                grid-column-end: 11;
                 align-self: center;
+                font-weight: bold;
             }
-            a{
+            nav > a{
                 text-decoration: none;
                 color: lightslategray;
             }
-            
+            nav > a:hover{
+                text-decoration: underline;
+                color: gray;
+            }
+
+
+
             figure{
                 grid-row-start: 2;
                 grid-row-end: 7;
                 grid-column-start: 2;
-                grid-column-end: 6;
-                align-self: stretch;
-                
+                grid-column-end: 5;
+                margin: auto;
             }
             aside{
-                grid-row-start: 5;
-                grid-row-end: 7;
+                grid-row-start: 6;
+                grid-row-end: 8;
                 grid-column-start: 6;
-                grid-column-end: 8;
+                grid-column-end: 9;
+                font-weight: bold;
+                font-size: 1.5rem;
             }
             footer{
                 grid-row-start: 9;
                 grid-row-end: 10;
                 grid-column-start: 2;
                 grid-column-end: 3;
+                font-weight: bold;
             }
+            
         </style>
     </head>
     <body>
@@ -76,11 +89,12 @@
         </nav>
         <br>
         <figure>
-            <img src = "IMG_2152.jpg" alt = "Me" width = "500" height = "600">
+            <img src = "222.jpg" alt = "Me" width = "500px" height = "600px">
         </figure>
         <aside>
             <p>Hey there. I am Jerry Gong, a second year computer science/statistics double major at UCSD.</p>
         </aside>
+        <a id="icons" href="https://www.linkedin.com/in/yunjie-jerry-gong-694451266/" ><i class="fa-brands fa-linkedin"></i></a>
         <footer>
             <p>Email: yugong@ucsd.edu</p>
             <p>Phone: (845)214-8528</p>
