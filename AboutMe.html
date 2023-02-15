@@ -3,10 +3,102 @@
     <head>
         <title>About Me</title>
         <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+            :root{
+                --normal: lightslategray;
+                --hovered: gray;
+            }
+            body{
+                font-family: 'Open Sans', sans-serif;
+                background-color: lightblue;
+                color: var(--normal);
+                display: grid;
+                grid-template-rows: repeat(9, 100px);
+                grid-template-columns: repeat(10, 200px);
+                
+            }
+            h2{
+                font-weight: bolder;
+                text-align: center;
+            }
+            main{
+                display: flex;
+                flex-direction: column;
+                grid-row-start: 2;
+                grid-row-end: 10;
+                grid-column-start: 4;
+                grid-column-end: 8;
+                
+            }
+            header{
+                font-size: 1rem;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                grid-column-start: 2;
+                grid-column-end: 4;
+                align-self: center;
+            }
+            nav{
+                display: flex;
+                flex-direction: row;
+                gap: 40px;
+                font-size: 1rem;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                grid-column-start: 8;
+                grid-column-end: 11;
+                align-self: center;
+                font-weight: bold;
+            }
+            nav > a{
+                text-decoration: none;
+                color: var(--normal);
+            }
+            nav > a:hover{
+                text-decoration: underline;
+                color: var(--hovered);
+            } 
+            footer{
+                grid-row-start: 9;
+                grid-row-end: 10;
+                grid-column-start: 2;
+                grid-column-end: 3;
+                font-weight: bold;
+            }
+
+            #index{
+                text-decoration: none;
+                color: var(--normal);
+            }
+            #index:hover{
+                text-decoration: underline;
+                color: var(--hovered);
+            }
+            figure{
+                display: flex;
+                flex-direction: column;
+                grid-row-start: 7;
+                grid-row-end: 8;
+                grid-column-start: 9;
+                grid-column-end: 10;
+                gap: 20px;
+                
+            }
+        </style>
     </head>
     <body>
+        <header>
+            <h1><a id="index" href="index.html"><b>Jerry Gong</b></a></h1>
+        </header>
+        <nav>
+            <a href="Projects.html"><span>Projects</span></a>
+            <a href="AboutMe.html"><span>About Me</span></a>
+            <a href="Resume.html"><span>Resume</span></a>
+            <a href="ContactMe.html"><span>Contact Me</span></a>
+        </nav>
         <main>
-            <h1>Background Story</h1>
+            <h2>Background Story</h2>
             <p>
                 Hello! I'm Jerry Gong, a current second year computer science and statistics double major
                 at UCSD. I was born in Guangzhou, China at April 22, 2003 and came to USA since high school.
@@ -25,6 +117,11 @@
             <p>Basketball, Working out, Gaming</p>
             
         </main>
+        <figure>
+            <a id="icons" href="https://www.linkedin.com/in/yunjie-jerry-gong-694451266/" ><img src = "linkedin.svg" alt = "linkedin" width = "30" height = "30"></a>
+            <a id="icons" href="https://github.com/JGong7" ><img src = "github.svg" alt = "github" width = "30" height = "30"></a>
+            <a id="icons" href="https://www.instagram.com/jerrygong7/" ><img src = "instagram.svg" alt = "instagram" width = "30" height = "30"></a>
+        </figure> 
         <footer>
             <p>Email: yugong@ucsd.edu</p>
             <p>Phone: (845)214-8528</p>

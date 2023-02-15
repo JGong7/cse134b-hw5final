@@ -3,29 +3,130 @@
     <head>
         <title>Contact Me</title>
         <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+            :root{
+                --normal: lightslategray;
+                --hovered: gray;
+            }
+            body{
+                font-family: 'Open Sans', sans-serif;
+                background-color: lightblue;
+                color: var(--normal);
+                display: grid;
+                grid-template-rows: repeat(9, 100px);
+                grid-template-columns: repeat(10, 200px);
+                
+            }
+            header{
+                font-size: 1rem;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                grid-column-start: 2;
+                grid-column-end: 4;
+                align-self: center;
+            }
+            nav{
+                display: flex;
+                flex-direction: row;
+                gap: 40px;
+                font-size: 1rem;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                grid-column-start: 8;
+                grid-column-end: 11;
+                align-self: center;
+                font-weight: bold;
+            }
+            nav > a{
+                text-decoration: none;
+                color: var(--normal);
+            }
+            nav > a:hover{
+                text-decoration: underline;
+                color: var(--hovered);
+            } 
+            footer{
+                grid-row-start: 9;
+                grid-row-end: 10;
+                grid-column-start: 2;
+                grid-column-end: 3;
+                font-weight: bold;
+            }
+            figure{
+                display: flex;
+                flex-direction: column;
+                grid-row-start: 7;
+                grid-row-end: 8;
+                grid-column-start: 9;
+                grid-column-end: 10;
+                gap: 20px;
+                
+            }
+            main{
+                grid-row-start: 3;
+                grid-row-end: 7;
+                grid-column-start: 5;
+                grid-column-end: 6;
+                align-items: center;
+            }
+            #Message{
+                height: 100px;
+                width: 350px;
+            }
+            legend{
+                align-items: center;
+            }
+            #index{
+                text-decoration: none;
+                color: var(--normal);
+            }
+            #index:hover{
+                text-decoration: underline;
+                color: var(--hovered);
+            }
+            
+        </style>
     </head>
     <body>
-        <h1>Contact Me</h1>
+        <header>
+            <h1><a id="index" href="index.html"><b>Jerry Gong</b></a></h1>
+        </header>
+        <nav>
+            <a href="Projects.html"><span>Projects</span></a>
+            <a href="AboutMe.html"><span>About Me</span></a>
+            <a href="Resume.html"><span>Resume</span></a>
+            <a href="ContactMe.html"><span>Contact Me</span></a>
+        </nav>
         <main>
-            <h2>Contacts Info</h2>
-            <p>Email: yugong@ucsd.edu</p>
-            <p>Phone: (845)214-8528</p>
-            <h3>Contacts Form</h3>
+            <h2>Contacts Form</h2>
             <form>
                 <fieldset>
-                    <legend>Put in your information</legend>
+                    <legend>Information</legend>
                     <label for="name">Name</label>
+                    <br>
                     <input type="text" id="name" name="name">
                     <br>
                     <label for="E-mail">E-mail</label>
+                    <br>
                     <input type="text" id="E-mail" name="E-mail">
                     <br>
                     <label for="Message">Message</label>
+                    <br>
                     <input type="text" id="Message" name="Message">
                     <br>
                     <button>Submit</button> 
                 </fieldset>
             </form>
         </main>
+        <figure>
+            <a id="icons" href="https://www.linkedin.com/in/yunjie-jerry-gong-694451266/" ><img src = "linkedin.svg" alt = "linkedin" width = "30" height = "30"></a>
+            <a id="icons" href="https://github.com/JGong7" ><img src = "github.svg" alt = "github" width = "30" height = "30"></a>
+            <a id="icons" href="https://www.instagram.com/jerrygong7/" ><img src = "instagram.svg" alt = "instagram" width = "30" height = "30"></a>
+        </figure> 
+        <footer>
+            <p>Email: yugong@ucsd.edu</p>
+            <p>Phone: (845)214-8528</p>
+        </footer>
     </body>
 </html>
