@@ -7,13 +7,30 @@
         <link rel="icon" href="favicon.ico" type="image/x-icon">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+            @keyframes movedown{ 
+                from{
+                    transform: translateY(-150px);
+                }
+                to{
+                    transform: translateY(0);
+                }
+            }
+            @keyframes moveup{
+                from{
+                    transform: translateY(150px);
+                }
+                to{
+                    transform: translateY(0);
+                }
+            }
             :root{
+                --background: lightblue;
                 --normal: lightslategray;
                 --hovered: gray;
             }
             body{
                 font-family: 'Open Sans', sans-serif;
-                background-color: lightblue;
+                background-color: var(--background);
                 color: var(--normal);
                 display: grid;
                 grid-template-rows: repeat(9, 100px);
@@ -40,19 +57,21 @@
                 align-self: center;
                 font-weight: bold;
             }
-            nav > a{
-                text-decoration: none;
-                color: var(--normal);
-            }
-            nav > a:hover{
-                text-decoration: underline;
-                color: var(--hovered);
-            }
             #index{
+                animation: movedown 1.5s;
                 text-decoration: none;
                 color: var(--normal);
             }
             #index:hover{
+                text-decoration: underline;
+                color: var(--hovered);
+            }
+            a{
+                animation: movedown 1.5s;
+                text-decoration: none;
+                color: var(--normal);
+            }
+            a:hover{
                 text-decoration: underline;
                 color: var(--hovered);
             }
@@ -72,6 +91,7 @@
                 font-size: 1.5rem;
             }
             footer{
+                animation: moveup 1.5s;
                 grid-row-start: 9;
                 grid-row-end: 10;
                 grid-column-start: 2;
@@ -86,14 +106,20 @@
                 grid-column-start: 9;
                 grid-column-end: 10;
                 gap: 20px;
-                
+            }
+            #icons{
+                transition-property: transform;
+                transition-duration: 0.5s;
+            }
+            #icons:hover{
+                transform: translateY(10px);
             }
             
         </style>
     </head>
     <body>
-        <header>
-            <h1><a id="index" href="index.html"><b>Jerry Gong</b></a></h1>
+        <header id="index">
+            <h1><a href="index.html">Jerry Gong</a></h1>
         </header>
         <nav>
                 <a href="Projects.html"><span>Projects</span></a>
