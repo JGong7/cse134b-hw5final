@@ -13,7 +13,7 @@
                 color: lightslategray;
                 display: grid;
                 grid-template-rows: repeat(9, 100px);
-                grid-template-columns: repeat(11, 200px);
+                grid-template-columns: repeat(10, 200px);
                 
             }
             header{
@@ -32,7 +32,7 @@
                 grid-row-start: 1;
                 grid-row-end: 2;
                 grid-column-start: 7;
-                grid-column-end: 11;
+                grid-column-end: 10;
                 align-self: center;
                 font-weight: bold;
             }
@@ -66,11 +66,14 @@
                 grid-column-end: 3;
                 font-weight: bold;
             }
-            #icons{
+            aside + figure{
+                display: flex;
+                flex-direction: column;
                 grid-row-start: 7;
                 grid-row-end: 8;
-                grid-column-start: 10;
-                grid-column-end: 11;
+                grid-column-start: 9;
+                grid-column-end: 10;
+                gap: 10px;
                 
             }
             
@@ -94,7 +97,10 @@
         <aside>
             <p>Hey there. I am Jerry Gong, a second year computer science/statistics double major at UCSD.</p>
         </aside>
-        <a id="icons" href="https://www.linkedin.com/in/yunjie-jerry-gong-694451266/" ><img src = "linkedin.svg" alt = "linkedin" width = "30" height = "30"></a>
+        <figure>
+            <a id="icons" href="https://www.linkedin.com/in/yunjie-jerry-gong-694451266/" ><img src = "linkedin.svg" alt = "linkedin" width = "30" height = "30"></a>
+            <a id="icons" href="https://github.com/JGong7" ><img src = "github.svg" alt = "github" width = "30" height = "30"></a>
+        </figure> 
         <footer>
             <p>Email: yugong@ucsd.edu</p>
             <p>Phone: (845)214-8528</p>
