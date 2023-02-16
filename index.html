@@ -9,25 +9,67 @@
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
             @media (max-width: 645px){
-                header{
-                font-size: 0.5rem;
-                grid-row-start: 1;
-                grid-row-end: 2;
-                grid-column-start: 2;
-                grid-column-end: 4;
-                align-self: center;
-            }
+                aside{
+                    grid-row-start: 7;
+                    grid-row-end: 9;
+                    grid-column-start: 3;
+                    grid-column-end: 9;
+                    font-weight: bold;
+                    font-size: 1.5rem;
+                } 
                 nav{
                 display: flex;
                 flex-direction: row;
                 gap: 10%;
-                font-size: 0.5rem;
+                font-size: 0.8rem;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                grid-column-start: 6;
+                grid-column-end: 9;
+                align-self: center;
+                font-weight: bold;
+                }
+                aside + figure{
+                display: flex;
+                flex-direction: column;
+                grid-row-start: 6;
+                grid-row-end: 8;
+                grid-column-start: 9;
+                grid-column-end: 10;
+                gap: 20px;
+            }
+
+            }
+            @media (min-width: 645px){
+                aside{
+                grid-row-start: 6;
+                grid-row-end: 8;
+                grid-column-start: 6;
+                grid-column-end: 9;
+                font-weight: bold;
+                font-size: 1.5rem;
+                align-self: center;
+                }
+                nav{
+                display: flex;
+                flex-direction: row;
+                gap: 10%;
+                font-size: 1rem;
                 grid-row-start: 1;
                 grid-row-end: 2;
                 grid-column-start: 7;
                 grid-column-end: 10;
                 align-self: center;
                 font-weight: bold;
+                }
+                aside + figure{
+                display: flex;
+                flex-direction: column;
+                grid-row-start: 6;
+                grid-row-end: 8;
+                grid-column-start: 10;
+                grid-column-end: 11;
+                gap: 20px;
             }
             }
             @keyframes movedown{ 
@@ -67,18 +109,6 @@
                 grid-column-end: 4;
                 align-self: center;
             }
-            nav{
-                display: flex;
-                flex-direction: row;
-                gap: 10%;
-                font-size: 1rem;
-                grid-row-start: 1;
-                grid-row-end: 2;
-                grid-column-start: 7;
-                grid-column-end: 10;
-                align-self: center;
-                font-weight: bold;
-            }
             #index{
                 animation: movedown 1.5s;
                 text-decoration: none;
@@ -104,15 +134,6 @@
                 grid-column-end: 5;
                 margin: auto;
             }
-            aside{
-                grid-row-start: 6;
-                grid-row-end: 8;
-                grid-column-start: 6;
-                grid-column-end: 9;
-                font-weight: bold;
-                font-size: 1.5rem;
-                align-self: center;
-            }
             footer{
                 animation: moveup 1.5s;
                 grid-row-start: 8;
@@ -121,15 +142,7 @@
                 grid-column-end: 3;
                 font-weight: bold;
             }
-            aside + figure{
-                display: flex;
-                flex-direction: column;
-                grid-row-start: 6;
-                grid-row-end: 8;
-                grid-column-start: 10;
-                grid-column-end: 11;
-                gap: 20px;
-            }
+            
             #icons{
                 transition-property: transform;
                 transition-duration: 0.5s;
