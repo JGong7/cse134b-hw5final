@@ -7,7 +7,10 @@
         <title>Jerry Gong's first attempts at web dev</title>
         <link rel="icon" href="favicon.ico" type="image/x-icon">
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+            @font-face{
+                font-family: opensans;
+                src: url(open.ttf);
+            }
             @media (max-width: 645px){
                 aside{
                     grid-row-start: 7;
@@ -125,7 +128,7 @@
                 --hovered: gray;
             }
             body{
-                font-family: 'Open Sans', sans-serif;
+                font-family: opensans;
                 background-color: var(--background);
                 color: var(--normal);
                 display: grid;
@@ -170,7 +173,7 @@
                 grid-row-start: 7;
                 grid-row-end: 8;
                 grid-column-start: 2;
-                grid-column-end: 3;
+                grid-column-end: 4;
                 font-weight: bold;
             }
             

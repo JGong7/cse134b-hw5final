@@ -4,7 +4,10 @@
         <title>Contact Me</title>
         <link rel="icon" href="favicon.ico" type="image/x-icon">
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+            @font-face{
+                font-family: opensans;
+                src: url(open.ttf);
+            }
             @keyframes movedown{ 
                 from{
                     transform: translateY(-150px);
@@ -26,7 +29,7 @@
                 --hovered: gray;
             }
             body{
-                font-family: 'Open Sans', sans-serif;
+                font-family: opensans;
                 background-color: lightblue;
                 color: var(--normal);
                 display: grid;
