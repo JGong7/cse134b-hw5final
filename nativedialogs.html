@@ -6,12 +6,38 @@
     </head>
     <body>
         <button id="al">Alert</button>
-        <button>Confirm</button>
-        <button>Prompt</button>
+        <button id="con">Confirm</button>
+        <button id="prom">Prompt</button>
         <button>Safer Prompt</button>
+        <br>
+        <output id="out"></output>
         <script>
             let al = document.getElementById("al");
-            al.addEventListener("click", function(){ alert("uh oh")});
+            al.addEventListener("click", function(){alert("uh oh")});
+
+            let out = document.getElementById("out");
+            let con = document.getElementById("con");
+            con.addEventListener("click", conf);
+            function conf(){
+                if(confirm("Do you confirm this?")){
+                    out.innerText = "The value returned by the confirm method is : true";
+                }else{
+                    out.innerText = "The value returned by the confirm method is : false";
+                }
+            }
+
+            let prom = document.getElementById("prom");
+            prom.addEventListener("click", pro);
+            function pro(){
+                let input = prompt("please input");
+                if(input == null || input == ""){
+                    out.innerText = "User didn't enter anything";
+                }else{
+                    out.innerText = "Prompt result :" + input;
+                }
+            }
+
+
         </script>
     </body>
 </html>
