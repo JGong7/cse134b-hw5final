@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <title>CRUD</title>
+        <script type="text/javascript" src="DOMPurify-main/dist/purify.min.js"></script>
+        <script type="module" src="/blog.js"></script>
+    </head>
+    <body>
+        <h1>List of Blogs</h1>
+        <button id="but">Add Blogs</button>
+        
+        <ul id="list"></ul>
+        
+        <dialog id="add">
+            <label for="title">Post Title</label>
+            <input type="text" id="title" name="title">
+            <label for="date">Post Date</label>
+            <input type="date" id="date" name="date">
+            <label for="summary">Post summary</label>
+            <input type="text" id="summary" name="summary">
+            <button id="prompt-no">Cancel</button>
+            <button id="prompt-yes" onclick="blog.addtolist()">OK</button>
+        </dialog>
+
+        <script type="module">
+            import * as blog from './blog.js';
+            let but = document.getElementById('but');
+            but.addEventListener("click", blog.diashow);
+            let cancel = document.getElementById('prompt-no');
+            cancel.addEventListener("click", blog.dianoshow);
+        </script>
+    </body>
+</html>
