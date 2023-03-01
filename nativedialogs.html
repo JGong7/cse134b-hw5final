@@ -3,17 +3,20 @@
     <head>
         <link rel="icon" href="favicon.ico" type="image/x-icon">
         <title>Native Dialogs</title>
+        <script type="text/javascript" src="DOMPurify-main/dist/purify.min.js"></script>
     </head>
     <body>
         <button id="al">Alert</button>
         <button id="con">Confirm</button>
         <button id="prom">Prompt</button>
-        <button>Safer Prompt</button>
+        <button id="safe">Safer Prompt</button>
         <br>
         <output id="out"></output>
         <script>
             let al = document.getElementById("al");
-            al.addEventListener("click", function(){alert("uh oh")});
+            let ale = () => alert("uh oh");
+            al.addEventListener("click", ale);
+            
 
             let out = document.getElementById("out");
             let con = document.getElementById("con");
@@ -31,13 +34,24 @@
             function pro(){
                 let input = prompt("please input");
                 if(input == null || input == ""){
-                    out.innerText = "User didn't enter anything";
+                    out.innerHTML = "User didn't enter anything";
                 }else{
-                    out.innerText = "Prompt result :" + input;
+                    out.innerHTML = "Prompt result :" + input;
                 }
             }
-
+            
+            let safe = document.getElementById("safe");
+            safe.addEventListener("click", saf);
+            function saf(){
+                let input = DOMPurify.sanitize(prompt("please input"));
+                if(input == null || input == ""){
+                    out.innerHTML = "User didn't enter anything";
+                }else{
+                    out.innerHTML = "Prompt result :" + input;
+                }
+            }
 
         </script>
     </body>
 </html>
+

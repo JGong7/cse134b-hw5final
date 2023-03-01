@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <title>Custom Dialogs</title>
+        <script type="text/javascript" src="DOMPurify-main/dist/purify.min.js"></script>
+        <script type="module" src="/customdialog.js"></script>
+    </head>
+    <body>
+        
+        <button id="al">Alert</button>
+        <button id="con">Confirm</button>
+        <button id="prom">Prompt</button>
+        <br>
+        <output id="out"></output>
+        
+        <dialog id="alert-dialog">
+            <p>Alert Pressed!</p>
+            <button id="alert-close">ok</button>
+        </dialog>
+
+        <dialog id="confirm-dialog">
+            <p>Do you confirm this?</p>
+            <button id="confirm-no">Cancel</button>
+            <button id="confirm-yes">OK</button>
+        </dialog>
+
+        <dialog id="prompt-dialog">
+            <p>What is your name?</p>
+            <input type="text" id="name" name="name">
+            <button id="prompt-no">Cancel</button>
+            <button id="prompt-yes">OK</button>
+        </dialog>
+        
+        <script type="module">
+            import {alertshow, alertclose, confirmshow, confirmcloseyes, confirmcloseno, promptshow, promptcancel, promptinput} from './customdialog.js';
+            let al = document.getElementById("al");
+            al.addEventListener("click", alertshow);
+            let but = document.getElementById("alert-close");
+            but.addEventListener("click", alertclose);
+            let con = document.getElementById("con");
+            con.addEventListener("click", confirmshow);
+            let confyes = document.getElementById("confirm-yes");
+            confyes.addEventListener("click", confirmcloseyes);
+            let confno = document.getElementById("confirm-no");
+            confno.addEventListener("click", confirmcloseno);
+            let prom = document.getElementById("prom");
+            prom.addEventListener("click", promptshow);
+            let promno = document.getElementById("prompt-no");
+            promno.addEventListener("click", promptcancel);
+            let promyes = document.getElementById("prompt-yes");
+            promyes.addEventListener("click", promptinput);
+        </script>
+    </body>
+</html>
