@@ -17,15 +17,18 @@
     <body>
         <h1>List of Blogs</h1>
 
+        <button id="showDialog" onclick="initialize()">Add Blog</button>
         
-        
-        <label for="title">Post Title</label>
-        <input type="text" id="title" name="title">
-        <label for="date">Post Date</label>
-        <input type="date" id="date" name="date">
-        <label for="summary">Post summary</label>
-        <input type="text" id="summary" name="summary">
-        <button id="add" onClick="createblog()">Add Blog</button>
+        <dialog id="ini">
+            <label for="title">Post Title</label>
+            <input type="text" id="title" name="title">
+            <label for="date">Post Date</label>
+            <input type="date" id="date" name="date">
+            <label for="summary">Post summary</label>
+            <input type="text" id="summary" name="summary">
+            <button id="cancel" onclick="inicancel()">Cancel</button>
+            <button id="add" onClick="createblog()">Save</button>
+        </dialog>
 
         <dialog id="update">
             <label for="title">Post Title</label>

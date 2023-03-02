@@ -1,4 +1,12 @@
 document.onload = display();
+function initialize(){
+    let dia = document.getElementById("ini");
+    dia.showModal();
+}
+function inicancel(){
+    let dia = document.getElementById("ini");
+    dia.close();
+}
 function addValidate(){
     let title = document.getElementById('title').value;
     let date = document.getElementById('date').value;
@@ -82,6 +90,8 @@ function display(){
 
 function createblog(){
     if (addValidate()){
+        let dia = document.getElementById("ini");
+        dia.close();
         let blogs = JSON.parse(localStorage.getItem("blogs")) || [];
         let title = document.getElementById('title').value;
         let date = document.getElementById('date').value;
