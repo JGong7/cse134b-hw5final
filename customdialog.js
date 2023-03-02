@@ -17,14 +17,14 @@ export function confirmcloseyes(){
     let dia = document.getElementById("confirm-dialog");
     dia.close();
     let out = document.getElementById("out");
-    out.innerText="The value returned by the confirm method is: true.";
+    out.innerText=`The value returned by the confirm method is: true.`;
 }
 
 export function confirmcloseno(){
     let dia = document.getElementById("confirm-dialog");
     dia.close();
     let out = document.getElementById("out");
-    out.innerText="The value returned by the confirm method is: false.";
+    out.innerText=`The value returned by the confirm method is: false.`;
 }
 
 export function promptshow(){
@@ -36,7 +36,7 @@ export function promptcancel(){
     let dia = document.getElementById("prompt-dialog");
     dia.close();
     let out = document.getElementById("out");
-    out.innerText="User didn't enter anything";
+    out.innerText=`User didn't enter anything`;
 }
 
 export function promptinput(){
@@ -45,8 +45,8 @@ export function promptinput(){
     let out = document.getElementById("out");
     let text = DOMPurify.sanitize(document.getElementById("name").value);
     if (text == ""){
-        out.innerText="User didn't enter anything";
+        out.innerText=`User didn't enter anything`;
     }else{
-        out.innerHTML="Prompt Result: " + text;
+        out.innerHTML=`Prompt Result: ${text}`;
     }
 }

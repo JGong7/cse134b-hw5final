@@ -4,23 +4,28 @@
         <link rel="icon" href="favicon.ico" type="image/x-icon">
         <title>CRUD</title>
         <script type="text/javascript" src="DOMPurify-main/dist/purify.min.js"></script>
+        <style>
+            th, td{
+                border: 1px solid;
+            }
+            table{
+                border: 1px solid;
+                width: 100%;
+            }
+        </style>
     </head>
     <body>
         <h1>List of Blogs</h1>
-        <button id="but">Add Blogs</button>
+
         
-        <ul id="list"></ul>
         
-        <dialog id="add">
-            <label for="title">Post Title</label>
-            <input type="text" id="title" name="title">
-            <label for="date">Post Date</label>
-            <input type="date" id="date" name="date">
-            <label for="summary">Post summary</label>
-            <input type="text" id="summary" name="summary">
-            <button id="prompt-no">Cancel</button>
-            <button id="prompt-yes">OK</button>
-        </dialog>
+        <label for="title">Post Title</label>
+        <input type="text" id="title" name="title">
+        <label for="date">Post Date</label>
+        <input type="date" id="date" name="date">
+        <label for="summary">Post summary</label>
+        <input type="text" id="summary" name="summary">
+        <button id="add" onClick="createblog()">Add Blog</button>
 
         <dialog id="update">
             <label for="title">Post Title</label>
@@ -32,8 +37,18 @@
             <button id="new-no">Cancel</button>
             <button id="new-yes">OK</button>
         </dialog>
-
-
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Summary</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
         <script src="blog.js"></script>
 
     </body>

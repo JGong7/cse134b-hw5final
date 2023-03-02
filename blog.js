@@ -1,73 +1,120 @@
-let length = 0;
-let but = document.getElementById('but');
-but.addEventListener("click", diashow);
-let cancel = document.getElementById('prompt-no');
-cancel.addEventListener("click", dianoshow);
-let newcancel = document.getElementById('new-no');
-newcancel.addEventListener("click", updatenoshow);
-
-function updatenoshow(){
-    let dia = document.getElementById("update");
-    dia.close();
-}
-function diashow(){
-    let dia = document.getElementById("add");
-    dia.showModal();
-    let ok = document.getElementById('prompt-yes');
-    ok.addEventListener("click", addtolist);
-}
-
-function dianoshow(){
-    let dia = document.getElementById("add");
-    dia.close();
-}
-
-function deleteitem(del){
-    if (confirm("Do you confirm you want to delete?")){
-        let item = del.parentElement;
-        let list = del.parentElement.parentElement;
-        list.removeChild(item);
+document.onload = display();
+function addValidate(){
+    let title = document.getElementById('title').value;
+    let date = document.getElementById('date').value;
+    let summary = document.getElementById('summary').value;
+    if (title == ""){
+        alert("Please enter a title");
+        return false;
     }
+    if (date == ""){
+        alert("Please enter a date");
+        return false;
+    }
+    if (summary == ""){
+        alert("Please enter a summary");
+        return false;
+    }
+    return true;
 }
-
-function edititem(length){
-    let button = document.getElementById(length);
-    let dia = document.getElementById("update");
+function editOn(index){
+    let blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+    blog = blogs[index];
+    let title = document.getElementById('newtitle');
+    let date = document.getElementById('newdate');
+    let summary = document.getElementById('newsummary');
+    title.value = blog.title;
+    date.value = blog.date;
+    summary.value = blog.summary;
+    let dia = document.getElementById('update');
     dia.showModal();
-    let item = button.parentElement;
-    let ititle = item.firstChild.innerText;
-    let idate = item.firstChild.nextSibling.nextSibling.innerText;
-    let isummary = item.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.innerText;
-    let title = document.getElementById("newtitle");
-    let date = document.getElementById("newdate");
-    let summary = document.getElementById("newsummary");
-    title.value = ititle;
-    date.value = idate;
-    summary.value = isummary;
-    let newyes = document.getElementById('new-yes');
-    newyes.addEventListener("click", ()=>newinput(button, length));
+    let no = document.getElementById("new-no");
+    no.addEventListener("click", editOff);
+    let yes = document.querySelector("dialog #new-yes");
+    yes.onclick = ()=>editblog(index);
 }
-
-function newinput(button, length){
-    let title = document.getElementById("newtitle").value;
-    let date = document.getElementById("newdate").value;
-    let summary = document.getElementById("newsummary").value;
-    button.parentElement.innerHTML = `<div>${title}</div> <div>${date}</div> Summary: <access-need>${summary}</access-need> <b id='edit${length}' onClick="edititem('edit${length}')">Edit</b> <b id='delete' onClick ='deleteitem(this)'>Delete</b>`;
+function editOff(){
     let dia = document.getElementById('update');
     dia.close();
 }
-
-
-function addtolist(){
-    let dia = document.getElementById("add");
-    dia.close();
-    let title = document.getElementById("title").value;
-    let date = document.getElementById("date").value;
-    let summary = document.getElementById("summary").value;
-    let list = document.getElementById("list");
-    let post = document.createElement('li');
-    post.innerHTML = `<div>${title}</div> <div>${date}</div> Summary: <access-need>${summary}</access-need> <b id='edit${length}' onClick="edititem('edit${length}')">Edit</b> <b id='delete' onClick ='deleteitem(this)'>Delete</b>`;
-    length ++;
-    list.appendChild(post);
+function editValidate(){
+    let title = document.getElementById('newtitle').value;
+    let date = document.getElementById('newdate').value;
+    let summary = document.getElementById('newsummary').value;
+    if (title == ""){
+        alert("Please enter a title");
+        return false;
+    }
+    if (date == ""){
+        alert("Please enter a date");
+        return false;
+    }
+    if (summary == ""){
+        alert("Please enter a summary");
+        return false;
+    }
+    return true;
+}
+function addClear(){
+    document.getElementById("title").value = "";
+    document.getElementById("date").value = "";
+    document.getElementById("summary").value = "";
+}
+function editClear(){
+    document.getElementById("newtitle").value = "";
+    document.getElementById("newdate").value = "";
+    document.getElementById("newsummary").value = "";
+}
+function display(){
+    let blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+    let html = "";
+    for (let i = 0; i < blogs.length; i++){
+        let blog = blogs[i];
+        html += `<tr>
+        <td>${blog.title}</td>
+        <td>${blog.date}</td>
+        <td>${blog.summary}</td>
+        <td><button id="${i}" onClick="deleteblog(${i})">Delete</button><button id="${i}" onClick="editOn(${i})">Edit</button></td>
+    </tr>`
+    }
+    document.querySelector("table tbody").innerHTML = html;
 }
 
+function createblog(){
+    if (addValidate()){
+        let blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+        let title = document.getElementById('title').value;
+        let date = document.getElementById('date').value;
+        let summary = document.getElementById('summary').value;
+        blogs.push({title : title, date : date, summary: summary});
+        localStorage.setItem("blogs", JSON.stringify(blogs));
+        display();
+        addClear();
+    }
+}
+
+function deleteblog(index){
+    if (confirm("Do you confirm that you want to delete this?")){
+        let blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+        blogs.splice(index, 1);
+        localStorage.setItem("blogs", JSON.stringify(blogs));
+        display();
+    }
+}
+
+function editblog(index){
+    if (editValidate()){
+        let blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+        let title = document.getElementById('newtitle').value;
+        let date = document.getElementById('newdate').value;
+        let summary = document.getElementById('newsummary').value;
+        blogs[index].title = title;
+        blogs[index].date = date;
+        blogs[index].summary = summary;
+        localStorage.setItem("blogs", JSON.stringify(blogs));
+        display();
+        editClear();
+        let dia = document.getElementById('update');
+        dia.close();
+    }   
+}
