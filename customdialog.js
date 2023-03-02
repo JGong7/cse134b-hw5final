@@ -1,6 +1,6 @@
 export function alertshow(){
     let dia = document.getElementById("alert-dialog");
-    dia.show();
+    dia.showModal();
 }
 
 export function alertclose(){
@@ -10,7 +10,7 @@ export function alertclose(){
 
 export function confirmshow(){
     let dia = document.getElementById("confirm-dialog");
-    dia.show();
+    dia.showModal();
 }
 
 export function confirmcloseyes(){
@@ -29,7 +29,7 @@ export function confirmcloseno(){
 
 export function promptshow(){
     let dia = document.getElementById("prompt-dialog");
-    dia.show();
+    dia.showModal();
 }
 
 export function promptcancel(){
