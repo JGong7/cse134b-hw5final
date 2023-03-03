@@ -43,7 +43,7 @@
             let safe = document.getElementById("safe");
             safe.addEventListener("click", saf);
             function saf(){
-                let input = DOMPurify.sanitize(prompt("please input"));
+                let input = DOMPurify.sanitize(prompt("What is your name?"));
                 if(input == null || input == ""){
                     out.innerHTML = "User didn't enter anything";
                 }else{
