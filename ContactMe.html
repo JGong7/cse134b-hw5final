@@ -3,6 +3,25 @@
     <head>
         <title>Contact Me</title>
         <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <script>
+            function valid(){
+                let name = document.getElementById("name").value;
+                let email = document.getElementById("E-mail").value;
+                let message = document.getElementById("Message").value;
+                if (name == ""){
+                    alert("Please enter a name.");
+                }
+                else if (email == ""){
+                    alert("Please enter an Email.");
+                }
+                else if (message == ""){
+                    alert("Please enter a message.");
+                }
+                else{
+                    alert("Thank you for your input! I will respond as soon as possible!");
+                }
+            }
+        </script>
         <style>
             @font-face{
                 font-family: opensans;
@@ -100,6 +119,12 @@
                 grid-column-end: 6;
                 align-items: center;
             }
+            #name{
+                width: 350px;
+            }
+            #E-mail{
+                width: 350px;
+            }
             #Message{
                 height: 100px;
                 width: 350px;
@@ -114,7 +139,6 @@
             #icons:hover{
                 transform: translateY(10px);
             }
-            
         </style>
     </head>
     <body>
@@ -144,7 +168,7 @@
                     <br>
                     <input type="text" id="Message" name="Message">
                     <br>
-                    <button>Submit</button> 
+                    <button onClick="valid()">Submit</button> 
                 </fieldset>
             </form>
         </main>
