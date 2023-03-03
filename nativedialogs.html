@@ -14,7 +14,7 @@
         <output id="out"></output>
         <script>
             let al = document.getElementById("al");
-            let ale = () => alert("uh oh");
+            let ale = () => alert("Alert pressed!");
             al.addEventListener("click", ale);
             
 
@@ -32,7 +32,7 @@
             let prom = document.getElementById("prom");
             prom.addEventListener("click", pro);
             function pro(){
-                let input = prompt("please input");
+                let input = prompt("What is your name?");
                 if(input == null || input == ""){
                     out.innerHTML = "User didn't enter anything";
                 }else{
