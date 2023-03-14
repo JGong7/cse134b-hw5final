@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>MethodTest</title>
+    </head>
+    <body>
+        <form>
+            <label for="id">id:</label>
+            <input type="text" id="id" name="id"><br>
+            <label for="article_name">article_name:</label>
+            <input type="text" id="article_name" name="article_name"><br>
+            <label for="article_body">article_body:</label>
+            <textarea id="article_body" name="article_body"></textarea><br>
+            <label for="date">current date:</label>
+            <input type="text" id="date" name="date" readonly><br>
+        </form>
+        <button id="post" onclick="post()">postBtn</button>
+        <button id="get" onclick="get()">getBtn</button>
+        <button id="put" onclick="put()">putBtn</button>
+        <button id="del" onclick="del()">deleteBtn</button>
+        <script src="methodtest.js"></script>
+        <br><output id="response"></output>
+        
+    </body>
+</html>
+
