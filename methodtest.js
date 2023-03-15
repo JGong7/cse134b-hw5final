@@ -12,12 +12,12 @@ function clear(){
 function post(){
     let request = new XMLHttpRequest();
     request.open("POST", "https://httpbin.org/post");
-    let id = document.getElementById("id").value;
+    let iid = document.getElementById("id").value;
     let name = document.getElementById("article_name").value;
     let body = document.getElementById("article_body").value;
     let writtendate = document.getElementById("date").value;
     let toSend = {
-        ID : id,
+        id : iid,
         article_name : name,
         article_body : body,
         date : writtendate
@@ -32,7 +32,14 @@ function post(){
 }
 function get(){
     let request = new XMLHttpRequest();
-    request.open("GET", "https://httpbin.org/get");
+    let iid = document.getElementById("id").value;
+    let url;
+    if (iid == ''){
+        url = `https://httpbin.org/get`;
+    }else{
+        url = `https://httpbin.org/get?id=${iid}`;
+    }
+    request.open("GET", url);
     request.responseType = "json";
     request.send();
     request.addEventListener("load", function(){
@@ -44,12 +51,12 @@ function get(){
 function put(){
     let request = new XMLHttpRequest();
     request.open("PUT", "https://httpbin.org/put");
-    let id = document.getElementById("id").value;
+    let iid = document.getElementById("id").value;
     let name = document.getElementById("article_name").value;
     let body = document.getElementById("article_body").value;
     let writtendate = document.getElementById("date").value;
     let toSend = {
-        ID : id,
+        id : iid,
         article_name : name,
         article_body : body,
         date : writtendate
@@ -64,7 +71,14 @@ function put(){
 }
 function del(){
     let request = new XMLHttpRequest();
-    request.open("DELETE", "https://httpbin.org/delete");
+    let iid = document.getElementById("id").value;
+    let url;
+    if (iid == ''){
+        url = `https://httpbin.org/delete`;
+    }else{
+        url = `https://httpbin.org/delete?id=${iid}`;
+    }
+    request.open("DELETE", url);
     request.responseType = "json";
     request.send();
     request.addEventListener("load", function(){
