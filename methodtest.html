@@ -5,6 +5,11 @@
     </head>
     <body>
         <form>
+            <label for="way">Select your preferred way to send the request</label>
+            <input type="radio" id="xml" name="radio" value="xml" checked>
+            <label for="xml">XMLHttpRequest</label>
+            <input type="radio" id="fetch" name="radio" value="fetch">
+            <label for="fetch">fetch</label><br>
             <label for="id">id:</label>
             <input type="text" id="id" name="id"><br>
             <label for="article_name">article_name:</label>
@@ -14,12 +19,12 @@
             <label for="date">current date:</label>
             <input type="text" id="date" name="date" readonly><br>
         </form>
-        <button id="post" onclick="post()">postBtn</button>
-        <button id="get" onclick="get()">getBtn</button>
-        <button id="put" onclick="put()">putBtn</button>
-        <button id="del" onclick="del()">deleteBtn</button>
+        <button id="post" onclick="postCheck()">postBtn</button>
+        <button id="get" onclick="getCheck()">getBtn</button>
+        <button id="put" onclick="putCheck()">putBtn</button>
+        <button id="del" onclick="delCheck()">deleteBtn</button>
         <script src="methodtest.js"></script>
-        <br><output id="response"></output>
+        <br><pre><output id="response"></output></pre>
         
     </body>
 </html>
